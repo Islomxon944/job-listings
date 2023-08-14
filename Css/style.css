@@ -1,6 +1,16 @@
+:root{
+    --body-bg: #effafa;
+    --green: #5ca5a5;
+    --light:rgba(92, 165, 165, 0.1);
+    --dark-green:#7c8f8f;
+    --black:#2b3939;
+}
+
+
+/* GLOBAL */
 html{
-    height: 100%;
     box-sizing: border-box;
+    height: 100%;
     scroll-behavior: smooth;
 }
 
@@ -16,11 +26,12 @@ body{
     height: 100%;
     padding: 0;
     margin: 0;
-    font-family:"Arial", sans-serif;
-    font-size: 16px;
+    font-family:"League Spartan","Arial", sans-serif;
+    font-weight:bold;
+    font-size: 15px;
     line-height: 1.5;
-    background-color: #fff;
-    color: #222;
+    background-color: var(--body-bg);
+    color: var(--black);
 }
 
 img{
@@ -28,40 +39,179 @@ img{
     height: auto;
 }
 
+/* VISUALLY-HIDDEN */
+.visually-hidden{
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+}
+
 
 /* CONTAINER */
 .container{
     width: 100%;
-    max-width: 1200px;
-    padding-left: 50px;
-    padding-right: 50px;
+    max-width: 1150px;
+    padding-left: 20px;
+    padding-right: 20px;
     margin-left: auto;
     margin-right: auto;
 
 }
+/* BADGE */
+.badge {
+    display: inline-block;
+    padding: 6px 8px 4px;
+    text-align: center;
+    font-size: 11px;
+    border-radius: 12px;
+    letter-spacing: -0.08px;
+    line-height: 14px;
+    text-transform: uppercase;
+}
+.badge-green {
+    background-color: var(--green);
+    color: #fff;
+}
+.badge-black {
+    background-color: var(--black);
+    color: #fff;
+}
 
+
+/* TAG */
+.tag {
+    display: inline-block;
+    padding: 4px 8px;
+    border-radius: 4px;
+    background-color: #f2f2f2;
+    font-size: 13px;
+    line-height: 24px;
+    letter-spacing: -0.1px;
+    color: var(--green);
+}
 
 /* MAIN-CONTENT */
 .main-content{
+    padding-top: 76px;
+    padding-bottom: 120px;
     flex-grow: 1;
 }
 
-.box{
-    height: 757px;
-    background-color: lightcyan;
-    color: #fff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 120px;
-    font-weight: bold;
-    text-transform: uppercase;
-    letter-spacing: 5px;
-    background-image: linear-gradient(
-        to right bottom,
-        yellow,
-        black
-    );
-    /* -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent; */
+
+/* SITE-HEADER */
+.site-header{
+    min-height: 156px;
+    border-color: var(--green);
+    background-image: url(../img/site-bg.svg);
+    background-repeat: no-repeat;
+    background-size: auto 100%;
+    background-position: center center; 
 }
+
+/* JOB-LISTINGS */
+.job-listing {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+.job-listings-item{
+    display: flex;
+    align-items:center;
+    padding: 32px 40px 35px;
+    border-left: 5px solid transparent;
+    border-radius: 5px;
+    background-color: #fff;
+    box-shadow: 0px 15px 20px -5px rgba(13, 113, 130, 0.15);
+}
+.job-listings-item-fetured{
+    border-left-color:var(--green);
+}
+.job-listings-item:not(:last-child){
+    margin-bottom: 24px;
+}
+
+.job-listings-logo {
+    flex-shrink: 0;
+    width: 88px;
+    height: 88px;
+    margin-right: 24px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+.job-listings-info {
+    flex-grow: 1;
+    margin-right: 24px;
+}
+.job-listings-company-badges {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+}
+.job-listings-company-name {
+    margin-right: 16px;
+    font-size: 14px;
+    line-height: 16px;
+    color: var(--green);
+}
+.job-listings-badges {
+    display: flex;
+    
+}
+.job-listings-badges-item:not(:last-child) {
+    margin-right: 8px;
+}
+
+.job-listings-position {
+    margin-top: 0;
+    margin-bottom: 8px;
+}
+.job-listings-link {
+    font-size: 18px;
+    line-height: 24px;
+    color: var(--black);
+    text-decoration: none;
+}
+.job-listings-link:hover{
+    color: var(--green);
+}
+
+.job-listings-addl{
+    display: flex;
+    align-items: center;
+    font-weight: 500;
+    letter-spacing: -0.12px;
+    color: var(--dark-green);
+}
+.job-listings-addl-item:not(:last-child){
+    position: relative;
+    margin-right: 36px;
+}
+.job-listings-addl-item:not(:last-child)::after{
+    position: absolute;
+    right: -20px;
+    top: 50%;
+    transform: translateY(-50%);
+    border-radius: 50%;
+    background-color: #b7c4c4;
+    width: 4px;
+    height: 4px;
+    content: "";
+}
+.job-listing-tags {
+    flex-grow: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    line-height: 0;
+}
+.job-listings-tags-item:not(:last-child) {
+    margin-right: 16px;
+}
+
